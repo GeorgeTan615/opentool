@@ -1,0 +1,77 @@
+✔ resolveHyperliquidChainConfig maps environment to chain + rpc env (0.419125ms)
+✔ shared utility helpers parse and clamp config values (0.323167ms)
+✔ clamp helpers enforce boundaries and handle invalid numeric inputs (0.05775ms)
+✔ schedule helpers compose clamping with cron generation (0.067209ms)
+✔ symbol helpers normalize perp and spot symbols consistently (0.358541ms)
+✔ outcome symbol helpers resolve HIP-4 side encodings (0.243167ms)
+✔ outcome market identity helper stores HIP-4 as prediction market (0.107416ms)
+✔ parseHyperliquidSymbol returns canonical descriptors for perp, spot, dex, and spot index (0.078334ms)
+✔ symbol helpers handle empty/unknown variants consistently (0.042042ms)
+✔ symbol helpers preserve canonical mixed-case symbols (0.070625ms)
+✔ resolved market descriptor separates spot order symbol from spot market-data coin (549.587708ms)
+✔ resolved info coin uses pair for spot index zero and @index for other spot markets (1.792125ms)
+✔ tick-size lookup resolves spot aliases to the correct info coin before l2Book (0.949917ms)
+✔ buildHyperliquidMarketDescriptor applies metadata-aware quote assets for HIP-3 perps (0.122834ms)
+✔ buildHyperliquidMarketDescriptor does not invent USDC for raw HIP-3 symbols without metadata (0.067542ms)
+✔ known dex helper returns HIP-3 dexes only on mainnet (0.064666ms)
+✔ open order aggregation merges primary and dex-scoped open orders (1.13175ms)
+✖ known dex list includes every HIP-3 dex in Hyperliquid perpDexs (2.69025ms)
+✖ open order aggregation queries the para dex when requested (0.741208ms)
+✔ active asset helper resolves canonical order symbol before request (0.2915ms)
+✔ marketable price helpers keep directional rounding and tick alignment (0.70625ms)
+✔ estimateHyperliquidLiquidationPrice uses asset max leverage and mode-aware collateral (0.155666ms)
+✔ shared target sizing helper supports fixed and percent modes (0.13925ms)
+✔ shared dca/budget helpers parse and normalize reusable strategy inputs (0.285583ms)
+✔ shared trade planner handles long-only and long-short modes (0.106ms)
+✔ order utils format sizes/prices and extract ids (0.885791ms)
+✔ canonical price/size format helpers enforce hyperliquid constraints (0.343ms)
+✔ state readers handle account value and position matching (0.158208ms)
+✔ fetchHyperliquidBars clamps query params and rejects invalid countBack (0.329708ms)
+✔ profile asset builder normalizes symbols and optional metadata (0.171667ms)
+ℹ tests 30
+ℹ suites 0
+ℹ pass 28
+ℹ fail 2
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 935.544875
+
+✖ failing tests:
+
+test at tests/hyperliquid-utils.test.ts:1:17411
+✖ known dex list includes every HIP-3 dex in Hyperliquid perpDexs (2.69025ms)
+  AssertionError [ERR_ASSERTION]: missing abcd
+      at TestContext.<anonymous> (opentool/tests/hyperliquid-utils.test.ts:568:12)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at tests/hyperliquid-utils.test.ts:1:17651
+✖ open order aggregation queries the para dex when requested (0.741208ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  null !== 'para'
+  
+      at TestContext.<anonymous> (opentool/tests/hyperliquid-utils.test.ts:594:10)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: null,
+    expected: 'para',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

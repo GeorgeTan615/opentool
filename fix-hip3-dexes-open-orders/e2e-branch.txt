@@ -1,0 +1,15 @@
+# PR head 27a43ef (npm pack): opentool 0.21.0 via "opentool/adapters/hyperliquid"
+# 2026-10-21T11:52:49.404Z
+getKnownHyperliquidDexes("mainnet") = ["xyz","flx","vntl","hyna","km","abcd","cash","para","mkts","io"]
+
+user 0x1081…65b7
+  fetchHyperliquidOpenOrdersAcrossDexes({})                            orders=1013 para= 236 {"xyz":703,"para":236,"mkts":24,"io":50}
+  fetchHyperliquidOpenOrdersAcrossDexes({ dexes: ["para"] })           orders= 236 para= 236 {"para":236}
+  fetchHyperliquidFrontendOpenOrdersAcrossDexes({})                    orders=1013 para= 236 {"xyz":703,"para":236,"mkts":24,"io":50}
+  fetchHyperliquidFrontendOpenOrdersAcrossDexes({ dexes: ["para"] })   orders= 236 para= 236 {"para":236}
+
+user 0x2577…4897
+  fetchHyperliquidOpenOrdersAcrossDexes({})                            orders=2395 para= 194 {"primary":950,"xyz":1206,"para":194,"io":45}
+  fetchHyperliquidOpenOrdersAcrossDexes({ dexes: ["para"] })           orders=1142 para= 194 {"primary":948,"para":194}
+  fetchHyperliquidFrontendOpenOrdersAcrossDexes({})                    orders=2392 para= 194 {"primary":947,"xyz":1206,"para":194,"io":45}
+  fetchHyperliquidFrontendOpenOrdersAcrossDexes({ dexes: ["para"] })   orders=1123 para= 194 {"primary":929,"para":194}

@@ -1,0 +1,15 @@
+# master e6dcdc1 (npm pack): opentool 0.21.0 via "opentool/adapters/hyperliquid"
+# 2026-10-21T11:50:34.377Z
+getKnownHyperliquidDexes("mainnet") = ["xyz","flx","vntl","hyna","km","cash"]
+
+user 0x1081…65b7
+  fetchHyperliquidOpenOrdersAcrossDexes({})                            orders= 703 para=   0 {"xyz":703}
+  fetchHyperliquidOpenOrdersAcrossDexes({ dexes: ["para"] })           orders=   0 para=   0 {}
+  fetchHyperliquidFrontendOpenOrdersAcrossDexes({})                    orders= 703 para=   0 {"xyz":703}
+  fetchHyperliquidFrontendOpenOrdersAcrossDexes({ dexes: ["para"] })   orders=   0 para=   0 {}
+
+user 0x2577…4897
+  fetchHyperliquidOpenOrdersAcrossDexes({})                            orders=2152 para=   0 {"primary":948,"xyz":1204}
+  fetchHyperliquidOpenOrdersAcrossDexes({ dexes: ["para"] })           orders= 945 para=   0 {"primary":945}
+  fetchHyperliquidFrontendOpenOrdersAcrossDexes({})                    orders=2132 para=   0 {"primary":943,"xyz":1189}
+  fetchHyperliquidFrontendOpenOrdersAcrossDexes({ dexes: ["para"] })   orders= 945 para=   0 {"primary":945}
