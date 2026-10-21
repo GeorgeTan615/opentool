@@ -39,7 +39,7 @@ const cases = [
 
 for (const [index, user] of users.entries()) {
   if (index > 0) await new Promise((resolve) => setTimeout(resolve, Number(pauseMs)));
-  console.log(`\nuser ${user}`);
+  console.log(`\nuser ${user.slice(0, 6)}…${user.slice(-4)}`);
   for (const [name, fn, extra] of cases) {
     const orders = await fn({ environment: "mainnet", user, ...extra });
     const para = orders.filter((order) => String(order.coin).startsWith("para:"));
